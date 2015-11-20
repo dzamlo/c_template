@@ -23,7 +23,7 @@ all: $(OUTS)
 -include $(DEPS)
 
 convolution: $(OBJS_convolution)
-	$(CC) $(LDFLAGS) $^ -o $@
+	$(CC) $^ -o $@ $(LDFLAGS)
 
 %.d: %.c
 	$(CPP) $(CFLAGS) $< -MM -MT $(@:.d=.o) >$@
